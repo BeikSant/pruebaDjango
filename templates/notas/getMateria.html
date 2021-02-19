@@ -1,0 +1,22 @@
+{% extends "master.html" %}
+{% block contenido %}
+<h4>Lista de Materias</h4>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Nombre Materia</th>
+            <th scope="col">Modulos</th>
+            <th scope="col">seleccionar</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for materia in listaMaterias%}
+        <tr>
+            <td>{{materia.nombre}}</td>
+            <td>{{materia.modulos}}</td>
+            <td><a href="{% url 'calcularNota' cedula materia.materia_id%}"><i class="bi bi-check-circle"></i></a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

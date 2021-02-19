@@ -1,0 +1,38 @@
+{% extends "master.html" %}
+
+{% block contenido %}
+<h2>Crear Estudiante</h2>
+<form method="POST"> {% csrf_token %}
+    <h4><strong>Datos del Estudiante</strong></h4>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label for="id_cedula">Cedula</label>
+            <input type="text" class="form-control" name="cedula" maxlength="10" required id="id_cedula">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="id_apellidos">Apellidos:</label>
+            <input type="text" class="form-control" name="apellidos" maxlength="70" required id="id_apellidos">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="id_nombres">Nombres:</label>
+            <input type="text" class="form-control" name="nombres" maxlength="70" required id="id_nombres">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="id_genero">Genero:</label>
+
+            <select name="genero" id="id_genero" class="form-control">
+                <option value="femenino">Femenino</option>
+
+                <option value="masculino">Masculino</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="id_correo">Correo:</label>
+        <input type="email" class="form-control" name="correo" maxlength="105" required id="id_correo"></p>
+    </div>
+    <button type="submit" class="btn btn-primary">Crear Estudiante</button>
+</form>
+{% endblock %}

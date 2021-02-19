@@ -1,0 +1,27 @@
+{% extends "master.html" %}
+{% block contenido %}
+<h4>Lista de Materias</h4>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Nombre Materia</th>
+            <th scope="col">Modulos</th>
+            <th scope="col">Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for materia in listaMaterias%}
+        <tr>
+            <td>{{materia.nombre}}</td>
+            <td>{{materia.modulos}}</td>
+            <td>opciones
+            </td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <th scope="row" colspan="5">Añadir nueva materia <a href="{% url 'crear_materia'%}"><i
+                        class="bi bi-plus-circle"></i></a></th>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}

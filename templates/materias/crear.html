@@ -1,0 +1,19 @@
+{% extends "master.html" %}
+
+{% block contenido %}
+<h2>Crear Materia</h2>
+<form method="POST"> {% csrf_token %}
+    <h4><strong>Datos de la Materia</strong></h4>
+    <div class="form-row">v>
+        <div class="form-group col-md-8">
+            <label for="id_apellidos">Nombre Materia:</label>
+            <input type="text" class="form-control" name="nombre" maxlength="70" required id="id_nombre">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="id_nombres">Modulos:</label>
+            <input type="text" class="form-control" name="modulos" maxlength="70" required id="id_modulos">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Crear Materia</button>
+</form>
+{% endblock %}

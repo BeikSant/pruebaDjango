@@ -1,0 +1,34 @@
+{% extends "master.html" %}
+{% block contenido %}
+<h4>Lista de Estudiantes</h4>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Cédula</th>
+            <th scope="col">Apellidos</th>
+            <th scope="col">Nombres</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for estudiante in listaEstudiantes%}
+        <tr>
+            <td>{{estudiante.cedula}}</td>
+            <td>{{estudiante.apellidos}}</td>
+            <td>{{estudiante.nombres}}</td>
+            <td>{{estudiante.correo}}</td>
+            <td>
+                
+                <a href="{% url 'eliminar_estudiante' estudiante.cedula %}"><i class="bi bi-trash"></i></a>
+                <a href="{% url 'modificar_estudiante' estudiante.cedula %}"><i class="bi bi-pencil"></i></a>
+            </td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <th scope="row" colspan="5">Añadir nuevo estudiante <a href="{% url 'crear_estudiantes'%}"><i
+                        class="bi bi-plus-circle"></i></a></th>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}
